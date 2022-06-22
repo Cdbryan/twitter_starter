@@ -16,23 +16,23 @@ export default function TweetBox({
     const newTweet = {
       name: userProfile.name,
       handle: userProfile.handle,
-      text: "",
+      text: tweetText,
       comments: 0,
       retweets: 0,
       likes: 0,
       id: tweets.length,
     };
     setTweets(tweets.concat(newTweet));
+    setTweetText("");
   }
   return (
     <div className="tweet-box">
       <TweetInput
         tweets={tweets}
-        tweetText={tweetText}
-        handleOnTweetTextChange={handleOnTweetTextChange}
+        value={tweetText}
+        handleOnChange={handleOnTweetTextChange}
       />
       {/* <TweetBox tweets={tweets} setTweets={setTweets} userProfile={userProfile} /> */}
-
       <div className="tweet-box-footer">
         <TweetBoxIcons />
         <TweetCharacterCount />

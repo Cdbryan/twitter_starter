@@ -1,7 +1,7 @@
 import * as React from "react";
 import AvatarIcon from "../AvatarIcon/AvatarIcon";
 
-export default function TweetInput({ tweetText, handleOnTweetTextChange }) {
+export default function TweetInput({ tweets ,value, handleOnChange }) {
   return (
     <div className="tweet-textarea">
       <AvatarIcon />
@@ -10,7 +10,8 @@ export default function TweetInput({ tweetText, handleOnTweetTextChange }) {
         name="new-tweet-input"
         type="text"
         placeholder="What's Happening?"
-        onChange={handleOnTweetTextChange}
+        onChange={handleOnChange}
+        value = {value}
       ></textarea>
 
       <SmileIcon />
